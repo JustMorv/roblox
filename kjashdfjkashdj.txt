@@ -1,0 +1,39 @@
+local NPC = script.Parent
+local HumanoidRootPart = NPC.HumanoidRootPart
+
+
+local MaxDistance = math.huge
+local Debounce = false
+
+NPC.Humanoid.Touched:Connect(function(hit)
+	                  if hit.Parent в :FindFirstChild("Humanoid") and not Debounce then
+		Debounce = true
+		hit.Parent.Humanoid.Health -= 20
+		wait(1)
+		Debounce = false
+	end
+end)
+
+while wait() do
+	local Players = game.Players:GetPlayers()
+	local Closest
+
+	for i, plr in pairs(Players) do
+		if plr.Character and plr.Character:FindFirstChild("Humanoid") and plr.Character.Humanoid.Health > 0 then
+			local PlayerHumanoidRootPart = plr.Character.HumanoidRootPart
+			local Distance = (HumanoidRootPart.Position - PlayerHumanoidRootPart.Position).Magnitude
+
+			if not Closest then 
+				Closest = PlayerHumanoidRootPart
+			end
+
+			if (HumanoidRootPart.Position - Closest.Position).Magnitude > Distance then
+				Closest = PlayerHumanoidRootPart
+			end
+		end
+	end
+
+	if Closest and (HumanoidRootPart.Position - Closest.Position).Magnitude <= MaxDistance then
+		NPC.Humanoid:MoveTo(Closest.Position)
+	end
+end
