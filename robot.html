@@ -1,0 +1,183 @@
+!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Пульт робота</title>
+
+    <style>
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background: #eef2f7;
+
+            text-align: center;
+
+            padding: 30px;
+
+        }
+
+        .panel {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            max-width: 420px;
+
+            margin: auto;
+
+        }
+
+        .robot {
+            margin: 25px auto;
+            width: 170px;
+        }
+
+        .antenna {
+
+            background: #3b82f6;
+
+            width: 8px;
+            height: 22px;
+
+            margin: auto;
+
+        }
+
+        .head {
+
+            background: #3b82f6;
+
+            border-radius: 20px;
+
+            padding: 20px 10px;
+
+        }
+
+        .face {
+
+            background: #1e293b;
+
+            border-radius: 12px;
+
+            padding: 13px;
+
+            display: flex;
+
+            justify-content: space-around;
+
+        }
+
+        .eye {
+
+            width: 18px;
+            height: 18px;
+
+            background: #a5f3fc;
+
+            border-radius: 50%;
+
+        }
+
+        .mouth {
+
+            background: white;
+
+            width: 45px;
+            height: 7px;
+
+            border-radius: 10px;
+
+            margin: 14px auto 0;
+
+        }
+
+        .legs {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .leg {
+
+            background: #3b82f6;
+
+            width: 35px;
+            height: 35px;
+
+            border-radius: 0 0 8px 8px;
+
+        }
+
+        button {
+
+            padding: 10px 14px;
+
+            margin: 5px;
+
+            border: 0;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="panel">
+
+        <h1 id="name">Мой робот</h1>
+
+        <div class="robot" id="robot">
+
+            <div class="antenna"></div>
+
+            <div class="head">
+
+                <div class="face">
+
+                    <div class="eye"></div>
+
+                    <div class="eye"></div>
+
+                </div>
+
+                <div class="mouth"></div>
+
+            </div>
+
+            <div class="legs">
+
+                <div class="leg"></div>
+
+                <div class="leg"></div>
+
+            </div>
+
+        </div>
+
+        <p id="status">Робот выключен</p>
+
+        <p id="energy">Энергия: 0</p>
+
+        <button id="blue">Синий</button>
+
+        <button id="green">Зелёный</button>
+
+        <button id="charge">Зарядить +10</button>
+
+        <button id="off">Выключить</button>
+
+    </div>
+
+</body>
